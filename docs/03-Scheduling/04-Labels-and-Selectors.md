@@ -73,6 +73,11 @@ NOTE: The `labels` under the `template` section are the labels configured on the
    ```
 In order to connect the `replicaSet` to the POD, we configured the `selector` field under the `replicaSet` specification to match the `labels` that we have defind on the POD (See the information stated under the `matchLabels` section that it matches on of the `labels` that were specified under the `template` section), a single label will do if it matches the correctly. However, if you think that other PODs might match as well and we want to have a more explicit match then also specify the second label as well so that the right POD will be matched.
 
+To filter by multiple labels seperate them with commas:
+```
+$ kubectl get pods --selector app=App1,env=dev,tier=backend
+```
+
   ![lrs](../../images/lrs.PNG)
 
 For services, it works in the same way, the `selector` section has the `labels` that should match the `POD`'s `labels` in the `template` of the replicaset-definition.yaml file.
