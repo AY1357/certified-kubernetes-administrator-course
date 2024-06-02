@@ -29,6 +29,11 @@ In this section, we will take a look at taints and tolerations.
   - **`NoExecute`**
   
   ![tn](../../images/tn.PNG)
+
+  To remove the taint added by the command above, you can run:
+  ```
+  kubectl taint nodes node1 key1=value1:NoSchedule-
+  ```
   
 ## Tolerations
    - Tolerations are added to pods by adding a **`tolerations`** section in pod definition.
