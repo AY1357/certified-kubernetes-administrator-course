@@ -32,9 +32,7 @@ In this section, we will take a look at taints and tolerations.
   
 ## Tolerations
    - Tolerations are added to pods by adding a **`tolerations`** section in pod definition.
-     NOTE: The `tolerations` property that you see in the pod definition file below is equivelent to the command:
-     `$ kubectl taint nodes node1 app=blue:NoSchedule` and takes the part `app=blue:NoSchedule` from the command mentioned.
-     Keep in mind that the `values` in the `tolerations` property needs to be in double-quotes `"..."`.
+     NOTE: Keep in mind that the `values` in the `tolerations` property needs to be in double-quotes `"..."`.
      ```
      apiVersion: v1
      kind: Pod
