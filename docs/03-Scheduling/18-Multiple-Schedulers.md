@@ -5,6 +5,9 @@ In this section, we will take a look at multiple schedulers
 
 ## Custom Schedulers
 - Your kubernetes cluster can schedule multiple schedulers at the same time.
+- Kubernetes is Highly extensible, and allows to write our own Kubernetes-Scheduler program. Package it and deploy it as the defualt Scheduler or as an additional scheduler in the Kubernetes Cluster.
+  This will allow us to deploy some applications with the default Scheduler and other applications with our own custom Scheduler.
+  When creatign a POD we can 
 
   ![ms](../../images/ms.PNG)
   
