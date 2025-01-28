@@ -22,6 +22,15 @@ In this section, we will take a look at Static Pods
   ```
   $ docker ps
   ```
+  or:
+  to view the PODs from ALL namespaces execute the below command and search for the PODs that in their NAME they have some legit words and not "random" characters like in: "kube-flannel-ds-ct7qn" (the "ds-ct7qn" part)
+  ```
+  $ kubectl get pods -A 
+  ```
+  another way to make sure of that is to execute the below command and look for "ownerReference" section, from this section look for the "kind", if it's set to "Node" then it's a static POD; For non-static PODs, the "kind" will be set to "ReplicaSet".
+  ```
+  kubectl get pod <POD_FULL_NAME> -n <NAMESPACE> -o yaml
+  ```
   ![sp2](../../images/sp2.PNG)
 
 #### The kubelet can create both kinds of pods - the static pods and the ones from the api server at the same time.
